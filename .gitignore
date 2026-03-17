@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+**/node_modules/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment files (IMPORTANT)
+.env
+**/.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db

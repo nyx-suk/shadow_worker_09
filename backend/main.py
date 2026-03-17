@@ -7,7 +7,6 @@ from openai import OpenAI
 
 # Load environment variables from .env file
 load_dotenv()
-
 # Initialize the OpenAI client
 openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
@@ -100,3 +99,8 @@ async def analyze_logs(request: AnalyzeLogsRequest):
         return {"status": "error", "message": "LLM response was not valid JSON. Please try again."}
     except Exception as e:
         return {"status": "error", "message": f"LLM request failed: {str(e)}"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+
